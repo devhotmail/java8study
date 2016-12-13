@@ -1,13 +1,11 @@
 package lambdainaction.chap10;
 
-import sun.java2d.pipe.AAShapePipe;
-
 import java.util.*;
 
 /**
  * Created by lsg on 2016/12/13.
  */
-public class CollectorIntrodue {
+public class CollectorIntroduce {
     public static void main(String[] args) {
         List<Apple> list = Arrays.asList(new Apple("green",150)
         ,new Apple("green",150),
