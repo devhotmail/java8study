@@ -7,15 +7,15 @@
 /nbproject
 /*.ipr
 /*.iws
-/*.iml
+
 
 # Repository wide ignore mac DS_Store files
-*/.idea/
+
 */out/
-*/*.iml
+
 .DS_Store
 .settings
 .class
-.xml
-.iml
-.idea
+
+
+
