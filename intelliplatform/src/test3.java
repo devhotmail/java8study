@@ -1,8 +1,7 @@
 import lambdainaction.chap10.Apple;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import static sun.util.locale.LocaleMatcher.filter;
 
 /**
  * Created by gaolei on 2016/12/12.
@@ -20,5 +19,19 @@ public class test3 {
 
         Thread t = new Thread(() -> System.out.println("Hello worldss"));
 
+    }
+
+    public static List<Apple> filter(List<Apple> inventory, ApplePredicate p){
+        List<Apple> result = new ArrayList<>();
+        for(Apple apple : inventory){
+            if(p.test(apple)){
+                result.add(apple);
+            }
+        }
+        return result;
+    }
+
+    interface ApplePredicate{
+        public boolean test(Apple a);
     }
 }
