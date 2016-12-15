@@ -2,8 +2,9 @@ import lambdainaction.chap10.Apple;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
+
 /**
  * Created by gaolei on 2016/12/12.
  * t3.1
@@ -14,7 +15,22 @@ import java.util.function.Consumer;
  */
 public class test3 {
     public static void main(String[] args) {
-        List<Apple> inventory = Arrays.asList(new Apple(80, "green"), new Apple(155, "green"), new Apple(120, "red"));
+        List<Apple> inventory = Arrays.asList(new Apple(80,"green"),
+                new Apple(155, "green"),
+                new Apple(120, "red"));
+        Comparator<Apple> c = Comparator.comparing(Apple::getWeight);
+
+
+        List<String> str = Arrays.asList("a","b","A","B");
+        str.sort((s1, s2) -> s1.compareToIgnoreCase(s2));
+        inventory.sort(c);
+        System.out.println();
+        /*error List<Integer> int1 = Arrays.asList(new Integer(4),new Integer(2),new Integer(1));
+        int1.sort((s1, s2) -> s1.compare(s2));*/
+       /* Function<String,Apple>
+        Runnable c1 = () -> System.out.println("ccccc");
+        c1.run();*/
+       /* List<Apple> inventory = Arrays.asList(new Apple(80, "green"), new Apple(155, "green"), new Apple(120, "red"));
 
         Consumer<Apple> appleConsumer = (Apple a) -> {
             System.out.println(a.getWeight());
@@ -22,7 +38,7 @@ public class test3 {
 
         System.out.println(appleConsumer);
         List<Apple> greenApples =
-                filter(inventory, (Apple a) -> "green".equals(a.getColor()));
+                filter(inventory, (Apple a) -> "green".equals(a.getColor()));*/
 
 
     }
